@@ -47,7 +47,7 @@ def res_func():
     lbl.update()
 def edit_func():
     def add_func():
-        conn=connect(host='localhost',database='my_db',user='root',password='tinku123')
+        conn=connect(host='localhost',database='#####',user='root',password='#######')
         cursor=conn.cursor()
         cursor.execute(f"insert into food_items values({item_id.get()},'{item.get()}','{price.get()}')")
         conn.commit()
@@ -59,7 +59,7 @@ def edit_func():
         price.set('')
         edit_window.focus()
     def save_func():
-        conn=connect(host='localhost',database='my_db',user='root',password='tinku123')
+        conn=connect(host='localhost',database='######',user='root',password='######')
         cursor=conn.cursor()
         cursor.execute(f'update tax set sgst={float(sgst_var.get())},cgst={float(cgst_var.get())}')
         conn.commit()
@@ -132,7 +132,7 @@ def edit_func():
 
 def load_func():
     item_listbox.delete(0,END)
-    conn=connect(host='localhost',database='my_db',user='root',password='tinku123')
+    conn=connect(host='localhost',database='######',user='root',password='######')
     cursor=conn.cursor()
     data=cursor.execute('select * from food_items')
     for id,item,price in cursor.fetchall():
@@ -166,7 +166,7 @@ def add_func():
         messagebox.showinfo('Info','Please Fill Qty Field')
 def total_func():
     global item_lst,price_lst,qty_lst,amt,s1,c1,t
-    conn = connect(host='localhost', database='my_db', user='root', password='tinku123')
+    conn = connect(host='localhost', database='#####', user='root', password='######')
     cursor = conn.cursor()
     cursor.execute('select * from tax')
     s, c = cursor.fetchone()
@@ -183,7 +183,7 @@ def total_func():
 def print_func():
     fs=open('reciept_print1.txt','w')
     global item_lst,price_lst, qty_lst, amt,refrence,s1,c1,t
-    conn = connect(host='localhost', database='my_db', user='root', password='tinku123')
+    conn = connect(host='localhost', database='#####', user='root', password='#######')
     cursor = conn.cursor()
     cursor.execute('select * from tax')
     s, c = cursor.fetchone()
@@ -204,7 +204,7 @@ now=datetime.now()
 def reciept_func():
     global item_lst, price_lst, qty_lst, amt,refrence,s1,c1,t
     refrence=randint(10000,99999)
-    conn = connect(host='localhost', database='my_db', user='root', password='tinku123')
+    conn = connect(host='localhost', database='######', user='root', password='#####')
     cursor = conn.cursor()
     cursor.execute('select * from tax')
     s, c = cursor.fetchone()
