@@ -1,6 +1,5 @@
 # Restaurant-Billing-System
-This is a GUI application built using Python, SQL Database Connectivity and Tkinter (a GUI tool).
-* It perform various operation like --
+This is a GUI application built using Python, SQL Database Connectivity and Tkinter (a GUI tool). It perform various operation like --
 1. Adding food item with their prices 
 2. Loading of data from database 
 3. Edit items details 
